@@ -1,0 +1,82 @@
+.sidebar-expanded {
+    width: 256px;
+  }
+  .sidebar-collapsed {
+    width: 100px;
+  }
+  .sidebar-item-text {
+    transition: opacity 0.3s;
+  }
+  .sidebar-collapsed .sidebar-item-text {
+    opacity: 0;
+    display: none;
+  }
+  .sidebar-hover-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .sidebar-hover-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .submenu-transition {
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  .main-content {
+    transition: margin-left 0.3s ease;
+  }
+
+  /* Memastikan ikon tetap pada ukuran yang sama */
+  .sidebar-collapsed svg:not(#userSubmenuArrow) {
+      min-width: 24px;
+      min-height: 24px;
+      width: 24px;
+      height: 24px;
+    }
+
+  @media (max-width: 768px) {
+    .sidebar-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      inset: 0;
+      z-index: 40;
+      display: none;
+    }
+    .sidebar-overlay.active {
+      display: block;
+    }
+  }
+
+
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slide-in-up {
+    0% { 
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.6s ease-in-out;
+}
+
+.animate-slide-in-up {
+    animation: slide-in-up 0.5s ease-out;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
